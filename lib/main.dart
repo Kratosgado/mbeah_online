@@ -14,7 +14,10 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       title: "Mbeah's Portfolio",
       debugShowCheckedModeBanner: false,
-      home: Scaffold(body: HomePage()),
+      themeMode: ThemeMode.dark,
+      home: Scaffold(
+        body: HomePage(),
+      ),
     );
   }
 }
