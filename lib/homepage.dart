@@ -1,40 +1,66 @@
 import 'package:flutter/material.dart';
+import 'package:mbeah_online/section_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: const Text('My Portfolio'),
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Welcome to Mbeah Online',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+      body: Container(
+        padding: const EdgeInsets.all(40),
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.lightBlue,
+              Colors.black38,
+              Colors.black45,
+              Colors.black12,
+              Colors.blueAccent,
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: Center(
+          child: Container(
+            width: screenSize.width * 0.9,
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey, width: 1),
+              borderRadius: BorderRadius.circular(50),
             ),
-            const SizedBox(height: 16),
-            const Text(
-              'Your Source for Amazing Web Solutions',
-              style: TextStyle(
-                fontSize: 18,
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const Text("Welcome To Mbeah's Portfolio"),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SectionCard(),
+                    const SizedBox(height: 16),
+                    SectionCard(),
+                    const SizedBox(height: 32),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SectionCard(),
+                    const SizedBox(height: 16),
+                    SectionCard(),
+                    const SizedBox(height: 32),
+                  ],
+                ),
+              ],
             ),
-            const SizedBox(height: 32),
-            ElevatedButton(
-              onPressed: () {
-                // Navigation logic to another section or page
-              },
-              child: const Text('Explore More'),
-            ),
-          ],
+          ),
         ),
       ),
     );

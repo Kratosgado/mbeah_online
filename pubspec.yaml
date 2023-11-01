@@ -1,15 +1,17 @@
 name: mbeah_online
-description: A new Flutter project.
-publish_to: 'none'
+description: A portfolio websit for Prince Mbeah Essilfie.
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.0.3 <4.0.0'
+  sdk: ">=3.0.3 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  flutter_riverpod: ^2.4.5
   google_fonts: ^6.1.0
+  ionicons: ^0.2.2
 
 dev_dependencies:
   flutter_test:

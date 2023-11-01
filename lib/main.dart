@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'homepage.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const ProviderScope(
+    child: MainApp(),
+  ));
 }
 
 class MainApp extends StatelessWidget {
@@ -11,11 +14,16 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: "Mbeah's Portfolio",
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.dark,
-      home: Scaffold(
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: const ColorScheme.dark(),
+        primaryColor: Colors.indigo,
+        secondaryHeaderColor: Colors.lightBlue,
+      ),
+      home: const Scaffold(
         body: HomePage(),
       ),
     );
