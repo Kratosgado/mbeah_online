@@ -10,3 +10,4 @@ LinearGradient widgetGradient = const LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
 );
+

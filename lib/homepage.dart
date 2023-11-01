@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mbeah_online/portrait_view.dart';
 import 'package:mbeah_online/section_card.dart';
+
+import 'landscape_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -7,63 +10,29 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
+    bool isLandscape = (screenSize.width / screenSize.height < 1) || false;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('My Portfolio'),
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-      ),
-      body: Container(
-        padding: const EdgeInsets.all(40),
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.lightBlue,
-              Colors.black38,
-              Colors.black45,
-              Colors.black12,
-              Colors.blueAccent,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
+        appBar: AppBar(
+          title: const Text('My Portfolio'),
+          centerTitle: true,
+          backgroundColor: Colors.transparent,
         ),
-        child: Center(
-          child: Container(
-            width: screenSize.width * 0.9,
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey, width: 1),
-              borderRadius: BorderRadius.circular(50),
+        body: Container(
+            padding: const EdgeInsets.all(40),
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Colors.lightBlue,
+                  Colors.black38,
+                  Colors.black45,
+                  Colors.black12,
+                  Colors.blueAccent,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                const Text("Welcome To Mbeah's Portfolio"),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SectionCard(),
-                    const SizedBox(height: 16),
-                    SectionCard(),
-                    const SizedBox(height: 32),
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SectionCard(),
-                    const SizedBox(height: 16),
-                    SectionCard(),
-                    const SizedBox(height: 32),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
+            child: isLandscape ? const PortraitView() : const LandscapeView(),),);
   }
 }
 

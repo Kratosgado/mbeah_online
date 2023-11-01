@@ -4,8 +4,8 @@ import 'package:mbeah_online/constants.dart';
 
 class SectionCard extends ConsumerWidget {
   final isHoveredProvider = StateProvider((ref) => false);
-
-  SectionCard({super.key});
+  final String title;
+  SectionCard({super.key, required this.title});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isHovered = ref.watch(isHoveredProvider);
@@ -17,11 +17,8 @@ class SectionCard extends ConsumerWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 100), // Animation duration
         curve: Curves.easeInOut, // Animation curve
-        width:
-            isHovered ? screenSize.width * 0.22 : screenSize.width * 0.2, // Change width on hover
-        height: isHovered
-            ? screenSize.height * 0.1
-            : screenSize.height * 0.08, // Change height on hover
+        width: isHovered ? 300 : 200, // Change width on hover
+        height: isHovered ? 80 : 60, // Change height on hover
         decoration: BoxDecoration(
           gradient: widgetGradient,
           borderRadius: const BorderRadius.only(
@@ -37,7 +34,7 @@ class SectionCard extends ConsumerWidget {
               color: isHovered ? Colors.lightBlue : Colors.grey, // Change text color on hover
               fontSize: isHovered ? 20.0 : 18.0, // Change text size on hover
             ),
-            child: const Text('Hover me!'),
+            child: Text(title),
           ),
         ),
       ),
