@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:mbeah_online/sections/about.dart';
 
 import 'homepage.dart';
+import 'sections/contacts.dart';
+import 'sections/portfolio.dart';
+import 'sections/services.dart';
+import 'sections/testimonial.dart';
 
 void main() {
   runApp(const ProviderScope(
@@ -14,7 +20,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: "Mbeah's Portfolio",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -23,9 +29,38 @@ class MainApp extends StatelessWidget {
         primaryColor: Colors.indigo,
         secondaryHeaderColor: Colors.lightBlue,
       ),
-      home: const Scaffold(
-        body: HomePage(),
-      ),
+      routerConfig: router,
     );
   }
 }
+
+final GoRouter router = GoRouter(
+  routes: <RouteBase>[
+    GoRoute(
+      path: '/',
+      builder: (context, state) => const HomePage(),
+      routes: <RouteBase>[
+        GoRoute(
+          path: 'testimonials',
+          builder: (context, state) => const TestimonialsSection(),
+        ),
+        GoRoute(
+          path: 'portfolio',
+          builder: (context, state) => const PortfolioSection(),
+        ),
+        GoRoute(
+          path: 'services',
+          builder: (context, state) => const ServicesSection(),
+        ),
+        GoRoute(
+          path: 'contacts',
+          builder: (context, state) => const ContactSection(),
+        ),
+        GoRoute(
+          path: 'about',
+          builder: (context, state) => const AboutSection(),
+        ),
+      ],
+    ),
+  ],
+);
