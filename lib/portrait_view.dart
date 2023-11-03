@@ -12,10 +12,6 @@ class PortraitView extends StatelessWidget {
 
     return SizedBox(
       width: screenSize.width * 0.9,
-      // decoration: BoxDecoration(
-      //   border: Border.all(color: Colors.grey, width: 1),
-      //   borderRadius: BorderRadius.circular(50),
-      // ),
       child: CustomPaint(
         painter: BorderPainter(),
         child: Column(

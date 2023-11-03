@@ -22,9 +22,9 @@ class SectionCard extends ConsumerWidget {
           curve: Curves.easeInOut, // Animation curve
           width: isHovered ? 300 : 200, // Change width on hover
           height: isHovered ? 80 : 60, // Change height on hover
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: widgetGradient,
-            borderRadius: const BorderRadius.only(
+            borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(5),
                 bottomLeft: Radius.circular(5),
                 topRight: Radius.circular(50),

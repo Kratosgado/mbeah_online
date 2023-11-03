@@ -1,8 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
-LinearGradient widgetGradient = const LinearGradient(
+const widgetGradient = LinearGradient(
   colors: [
     Colors.lightBlue,
     Colors.black38,
@@ -11,6 +9,20 @@ LinearGradient widgetGradient = const LinearGradient(
   ],
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
+);
+
+const backgroundGradient = BoxDecoration(
+  gradient: LinearGradient(
+    colors: [
+      Colors.lightBlue,
+      Colors.black38,
+      Colors.black45,
+      Colors.black12,
+      Colors.blueAccent,
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  ),
 );
 
 class PortfolioIntro extends StatelessWidget {

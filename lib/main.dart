@@ -42,7 +42,15 @@ final GoRouter router = GoRouter(
       routes: <RouteBase>[
         GoRoute(
           path: 'testimonials',
-          builder: (context, state) => const TestimonialsSection(),
+          pageBuilder: (context, state) => CustomTransitionPage(
+            key: state.pageKey,
+            transitionDuration: const Duration(seconds: 1),
+            child: const TestimonialsSection(),
+            transitionsBuilder: (context, animation, secondaryAnimation, child) => FadeTransition(
+              opacity: CurveTween(curve: Curves.easeInOutCirc).animate(animation),
+              child: child,
+            ),
+          ),
         ),
         GoRoute(
           path: 'portfolio',

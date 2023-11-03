@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mbeah_online/constants.dart';
 import 'package:mbeah_online/portrait_view.dart';
 
 import 'landscape_view.dart';
@@ -19,19 +20,7 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Container(
           padding: const EdgeInsets.all(40),
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Colors.lightBlue,
-                Colors.black38,
-                Colors.black45,
-                Colors.black12,
-                Colors.blueAccent,
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
+          decoration: backgroundGradient,
           child: isLandscape ? const PortraitView() : const LandscapeView(),
         ),
       ),
