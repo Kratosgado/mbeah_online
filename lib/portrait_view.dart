@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mbeah_online/constants.dart';
 
 import 'section_card.dart';
 
 class PortraitView extends StatelessWidget {
-  const PortraitView({super.key});
+  final GoRouterState goRouterState;
+  const PortraitView({super.key, required this.goRouterState});
 
   @override
   Widget build(BuildContext context) {

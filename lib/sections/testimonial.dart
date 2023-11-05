@@ -8,7 +8,6 @@ class TestimonialsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(40.0),
-      decoration: backgroundGradient,
       child: const Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [

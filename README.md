@@ -1,3 +1,3 @@
 # mbeah_online
 
-A new Flutter project.
+Portfolio website of Prince Mbeah Essilfie

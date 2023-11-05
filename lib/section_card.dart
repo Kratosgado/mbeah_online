@@ -4,9 +4,11 @@ import 'package:go_router/go_router.dart';
 import 'package:mbeah_online/constants.dart';
 
 class SectionCard extends ConsumerWidget {
-  final isHoveredProvider = StateProvider((ref) => false);
   final String title;
   SectionCard({super.key, required this.title});
+
+  final isHoveredProvider = StateProvider((ref) => false);
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isHovered = ref.watch(isHoveredProvider);
@@ -18,7 +20,7 @@ class SectionCard extends ConsumerWidget {
         onEnter: (_) => ref.read(isHoveredProvider.notifier).state = true,
         onExit: (_) => ref.read(isHoveredProvider.notifier).state = false,
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 100), // Animation duration
+          duration: const Duration(milliseconds: 300), // Animation duration
           curve: Curves.easeInOut, // Animation curve
           width: isHovered ? 300 : 200, // Change width on hover
           height: isHovered ? 80 : 60, // Change height on hover
@@ -32,7 +34,7 @@ class SectionCard extends ConsumerWidget {
           ),
           child: Center(
             child: AnimatedDefaultTextStyle(
-              duration: const Duration(milliseconds: 100), // Text animation duration
+              duration: const Duration(milliseconds: 300), // Text animation duration
               style: TextStyle(
                 color: isHovered ? Colors.lightBlue : Colors.grey, // Change text color on hover
                 fontSize: isHovered ? 20.0 : 18.0, // Change text size on hover

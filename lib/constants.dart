@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 const widgetGradient = LinearGradient(
   colors: [
@@ -90,3 +91,16 @@ class BorderPainter extends CustomPainter {
   @override
   bool shouldRebuildSemantics(BorderPainter oldDelegate) => false;
 }
+
+GoRoute buildSection(String sectionName, Widget sectionWidget) => GoRoute(
+      path: sectionName,
+      pageBuilder: (context, state) => CustomTransitionPage(
+        key: state.pageKey,
+        transitionDuration: const Duration(seconds: 1),
+        child: sectionWidget,
+        transitionsBuilder: (context, animation, secondaryAnimation, child) => FadeTransition(
+          opacity: CurveTween(curve: Curves.easeInOutCirc).animate(animation),
+          child: child,
+        ),
+      ),
+    );

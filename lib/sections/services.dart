@@ -8,7 +8,6 @@ class ServicesSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16.0),
-      decoration: backgroundGradient,
       child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

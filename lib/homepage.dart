@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mbeah_online/constants.dart';
 import 'package:mbeah_online/portrait_view.dart';
 
 import 'landscape_view.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  // final GoRouterState goRouterState;
+  final Widget child;
+  const HomePage({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,12 @@ class HomePage extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(40),
           decoration: backgroundGradient,
-          child: isLandscape ? const PortraitView() : const LandscapeView(),
+          child: SizedBox(
+            child: CustomPaint(
+              painter: BorderPainter(),
+              child: child
+            ),
+          ),
         ),
       ),
     );
