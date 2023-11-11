@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/constants.dart';
 
 class ServicesSection extends StatelessWidget {
   const ServicesSection({super.key});

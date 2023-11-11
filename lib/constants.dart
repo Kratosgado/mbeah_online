@@ -1,5 +1,8 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mbeah_online/section_card.dart';
 
 const widgetGradient = LinearGradient(
   colors: [
@@ -26,39 +29,64 @@ const backgroundGradient = BoxDecoration(
   ),
 );
 
+// Profile Intro Texts
 class PortfolioIntro extends StatelessWidget {
   const PortfolioIntro({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: RichText(
-        text: const TextSpan(
-          style: TextStyle(
-            fontSize: 24.0,
-            color: Colors.grey,
-          ),
-          children: <TextSpan>[
-            TextSpan(
-              text: 'Welcome to\n',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            TextSpan(
-              text: 'Mbeah Online',
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          RichText(
+            text: const TextSpan(
               style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30.0,
-                color: Colors.blue,
+                fontSize: 24.0,
+                color: Colors.grey,
               ),
+              children: <TextSpan>[
+                TextSpan(
+                  text: 'Name: ',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                  ),
+                ),
+                TextSpan(
+                  text: 'Essilfie Prince Mbeah',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30.0,
+                    color: Colors.blue,
+                  ),
+                ),
+              ],
             ),
-            TextSpan(text: '\nYour Source for Amazing Web Solutions'),
-          ],
-        ),
+          ),
+          AnimatedTextKit(
+            animatedTexts: [
+              TypewriterAnimatedText(
+                "A very determined student who willingly \n learns from his surroundings and\n"
+                "colleagues. I have strong teamwork ability\n and always loyal to the team. I am a quick\n"
+                "learner, adapts fast and always \n seek better ways to accomplish tasks.",
+                textStyle: const TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.grey,
+                ),
+                speed: const Duration(milliseconds: 100),
+              ),
+            ],
+            isRepeatingAnimation: false,
+          ),
+          SectionCard(title: "About")
+        ],
       ),
     );
   }
 }
 
+// Background Corner Border
 class BorderPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -92,6 +120,7 @@ class BorderPainter extends CustomPainter {
   bool shouldRebuildSemantics(BorderPainter oldDelegate) => false;
 }
 
+// Section Navigation builder
 GoRoute buildSection(String sectionName, Widget sectionWidget) => GoRoute(
       path: sectionName,
       pageBuilder: (context, state) => CustomTransitionPage(
@@ -104,3 +133,25 @@ GoRoute buildSection(String sectionName, Widget sectionWidget) => GoRoute(
         ),
       ),
     );
+
+final carousel = CarouselSlider(
+  options: CarouselOptions(
+    height: 500,
+    autoPlay: true,
+  ),
+  items: [1, 2, 3, 4, 5]
+      .map((e) => Builder(
+            builder: (context) => Container(
+              width: MediaQuery.of(context).size.width,
+              margin: const EdgeInsets.symmetric(horizontal: 5.0),
+              decoration: backgroundGradient,
+              child: Center(
+                child: Text(
+                  "text $e,",
+                  style: const TextStyle(fontSize: 100),
+                ),
+              ),
+            ),
+          ))
+      .toList(),
+);

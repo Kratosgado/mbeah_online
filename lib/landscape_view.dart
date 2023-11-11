@@ -15,27 +15,32 @@ class LandscapeView extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         const PortfolioIntro(),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            SectionCard(
-              title: "Portfolio",
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SectionCard(
+                  title: "Portfolio",
+                ),
+                const SizedBox(height: 100),
+                SectionCard(
+                  title: "Services",
+                ),
+              ],
             ),
-            const SizedBox(height: 100),
-            SectionCard(
-              title: "Services",
-            ),
-          ],
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SectionCard(
-              title: "Testimonials",
-            ),
-            const SizedBox(height: 100),
-            SectionCard(
-              title: "Contacts",
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SectionCard(
+                  title: "Testimonials",
+                ),
+                const SizedBox(height: 100),
+                SectionCard(
+                  title: "Contacts",
+                ),
+              ],
             ),
           ],
         ),

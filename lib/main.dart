@@ -46,20 +46,21 @@ final router = GoRouter(
   initialLocation: '/',
   routes: [
     ShellRoute(
-        navigatorKey: shellNavigatorKey,
-        builder: (context, state, child) => HomePage(child: child),
-        routes: [
-          GoRoute(
-            path: '/',
-            builder: (context, state) => const LandscapeView(),
-            routes: <RouteBase>[
-              buildSection('testimonials', const TestimonialsSection()),
-              buildSection('portfolio', const PortfolioSection()),
-              buildSection('services', const ServicesSection()),
-              buildSection('contacts', const ContactSection()),
-              buildSection('about', const AboutSection())
-            ],
-          )
-        ]),
+      navigatorKey: shellNavigatorKey,
+      builder: (context, state, child) => HomePage(child: child),
+      routes: [
+        GoRoute(
+          path: '/',
+          builder: (context, state) => const LandscapeView(),
+          routes: [
+            buildSection('testimonials', const TestimonialsSection()),
+            buildSection('portfolio', const PortfolioSection()),
+            buildSection('services', const ServicesSection()),
+            buildSection('contacts', const ContactSection()),
+            buildSection('about', const AboutSection())
+          ],
+        )
+      ],
+    ),
   ],
 );
