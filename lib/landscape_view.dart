@@ -22,7 +22,7 @@ class LandscapeView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 SectionCard(
-                  title: "Portfolio",
+                  title: "Projects",
                 ),
                 const SizedBox(height: 100),
                 SectionCard(

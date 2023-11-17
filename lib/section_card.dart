@@ -39,7 +39,7 @@ class SectionCard extends ConsumerWidget {
               child: AnimatedDefaultTextStyle(
                 duration: const Duration(milliseconds: 300),
                 style: TextStyle(
-                  color: isHovered ? Colors.lightBlue : Colors.grey, // Change text color on hover
+                  color: isHovered ? Colors.lightBlue : Colors.white, // Change text color on hover
                   fontSize: isHovered ? 20.0 : 18.0, // Change text size on hover
                 ),
                 child: AnimatedTextKit(

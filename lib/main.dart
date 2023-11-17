@@ -7,7 +7,7 @@ import 'package:mbeah_online/sections/about.dart';
 
 import 'homepage.dart';
 import 'sections/contacts.dart';
-import 'sections/portfolio.dart';
+import 'sections/projects.dart';
 import 'sections/services.dart';
 import 'sections/testimonial.dart';
 
@@ -28,6 +28,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: const ColorScheme.dark(),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
         primaryColor: Colors.indigo,
         secondaryHeaderColor: Colors.lightBlue,
       ),
@@ -54,7 +55,7 @@ final router = GoRouter(
           builder: (context, state) => const LandscapeView(),
           routes: [
             buildSection('testimonials', const TestimonialsSection()),
-            buildSection('portfolio', const PortfolioSection()),
+            buildSection('projects', const ProjectSection(projects: [],)),
             buildSection('services', const ServicesSection()),
             buildSection('contacts', const ContactSection()),
             buildSection('about', const AboutSection())

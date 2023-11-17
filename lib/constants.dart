@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mbeah_online/section_card.dart';
 
@@ -43,16 +44,8 @@ class PortfolioIntro extends StatelessWidget {
             text: const TextSpan(
               style: TextStyle(
                 fontSize: 24.0,
-                color: Colors.grey,
               ),
               children: <TextSpan>[
-                TextSpan(
-                  text: 'Name: ',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                  ),
-                ),
                 TextSpan(
                   text: 'Essilfie Prince Mbeah',
                   style: TextStyle(
@@ -64,20 +57,27 @@ class PortfolioIntro extends StatelessWidget {
               ],
             ),
           ),
-          AnimatedTextKit(
-            animatedTexts: [
-              TypewriterAnimatedText(
-                "A very determined student who willingly \n learns from his surroundings and\n"
-                "colleagues. I have strong teamwork ability\n and always loyal to the team. I am a quick\n"
-                "learner, adapts fast and always \n seek better ways to accomplish tasks.",
-                textStyle: const TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.grey,
-                ),
-                speed: const Duration(milliseconds: 100),
+          Row(
+            children: [
+              const VerticalDivider(),
+              AnimatedTextKit(
+                animatedTexts: [
+                  TypewriterAnimatedText(
+                    "A passionate full-stack developer and Machine Learning \n"
+                    "and AI enthusiast, currently deepening my knowledge in \n"
+                    "Computer Science. I thrive on challenges, constantly seeking \n"
+                    "innovative solutions to solve complex problems. With a strong \n"
+                    "foundation in both front-end and back-end development, I strive \n"
+                    "to deliver efficient and robust applications.",
+                    textStyle: const TextStyle(
+                      fontSize: 20.0,
+                    ),
+                    speed: const Duration(milliseconds: 50),
+                  ),
+                ],
+                isRepeatingAnimation: false,
               ),
             ],
-            isRepeatingAnimation: false,
           ),
           SectionCard(title: "About")
         ],
@@ -95,10 +95,10 @@ class BorderPainter extends CustomPainter {
     double cornerSide = sh * 0.1; // desirable value for corners side
 
     Paint paint = Paint()
-      ..color = Colors.grey
       ..strokeWidth = 2
       ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round;
+      ..strokeCap = StrokeCap.round
+      ..color = Colors.white;
 
     Path path = Path()
       ..moveTo(cornerSide, 0)
@@ -154,4 +154,48 @@ final carousel = CarouselSlider(
             ),
           ))
       .toList(),
+);
+
+final appbar = AppBar(
+  title: const Text('My Portfolio'),
+  centerTitle: true,
+  backgroundColor: Colors.black,
+  actions: [
+    IconButton(
+      icon: const Icon(FontAwesomeIcons.linkedinIn),
+      onPressed: () {
+        // Navigate to LinkedIn
+      },
+    ),
+    IconButton(
+      icon: const Icon(FontAwesomeIcons.github),
+      onPressed: () {
+        // Navigate to GitHub
+      },
+    ),
+    IconButton(
+      icon: const Icon(FontAwesomeIcons.twitter),
+      onPressed: () {
+        // Navigate to Twitter
+      },
+    ),
+    IconButton(
+      icon: const Icon(Icons.code),
+      onPressed: () {
+        // Navigate to coding projects
+      },
+    ),
+    IconButton(
+      icon: const Icon(Icons.school),
+      onPressed: () {
+        // Navigate to education
+      },
+    ),
+    IconButton(
+      icon: const Icon(Icons.work),
+      onPressed: () {
+        // Navigate to work experience
+      },
+    ),
+  ],
 );
