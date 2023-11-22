@@ -52,7 +52,9 @@ class IntroBody extends StatelessWidget {
                   color: Colors.transparent,
                 ),
               const CombineSubtitleText(),
-              const SizedBox(height: defaultPadding/2,),
+              const SizedBox(
+                height: defaultPadding / 2,
+              ),
               const Responsive(
                 desktop: AnimatedDescriptionText(start: 14, end: 15),
                 largeMobile: AnimatedDescriptionText(start: 14, end: 12),
@@ -67,7 +69,11 @@ class IntroBody extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        if(Responsive.isDesktop(context)) const AnimatedImageContainer(),
+        if (Responsive.isDesktop(context))
+          const AnimatedImageContainer(
+            height: 350,
+            width: 300,
+          ),
         const Spacer(),
       ],
     );
