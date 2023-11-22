@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mbeah_online/constants.dart';
+import 'package:mbeah_online/views/main/drawer/drawer_image.dart';
 
 class About extends StatelessWidget {
   const About({super.key});
@@ -14,7 +15,7 @@ class About extends StatelessWidget {
           const Spacer(
             flex: 2,
           ),
-          //TODO: DRAWERIMAGE
+          const DrawerImage(),
           const Spacer(),
           Text(
             "Prince Mbeah Essilfie",
@@ -24,7 +25,7 @@ class About extends StatelessWidget {
             height: defaultPadding / 4,
           ),
           const Text(
-            'Flutter Developer & Student of\nComputer Science\nML/AI Enthusiast',
+            'Software Developer & Student of\nComputer Science\nML/AI Enthusiast',
             textAlign: TextAlign.center,
             style: TextStyle(fontWeight: FontWeight.w200, height: 1.5),
           ),

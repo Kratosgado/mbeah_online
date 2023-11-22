@@ -1,7 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:mbeah_online/view_models/responsive.dart';
+import 'package:mbeah_online/views/intro/components/side_menu_button.dart';
 
 class Introduction extends StatelessWidget {
   const Introduction({super.key});
@@ -11,17 +10,23 @@ class Introduction extends StatelessWidget {
     return Scaffold(
       body: Row(
         children: [
-          SizedBox(width: MediaQuery.sizeOf(context).width * 0.01,),
-          if(!Responsive.isLargeMobile(context))
-            //TODO MENUBUTTON
-          SizedBox(width: MediaQuery.sizeOf(context).width * 0.02,),
-          if(!Responsive.isLargeMobile(context)) // TODO: socialmediaicon
           SizedBox(
-            width: MediaQuery.sizeOf(context).width * 0.07,
+            width: MediaQuery.sizeOf(context).width * 0.01,
           ),
+          if (!Responsive.isLargeMobile(context))
+            MenuButton(
+              onTap: () => Scaffold.of(context).openDrawer(),
+            ),
+          SizedBox(
+            width: MediaQuery.sizeOf(context).width * 0.02,
+          ),
+          if (!Responsive.isLargeMobile(context)) // TODO: socialmediaicon
+            SizedBox(
+              width: MediaQuery.sizeOf(context).width * 0.07,
+            ),
           const Expanded(
-            //TODO: Introbody()
-            child: Text("will be bacck"))
+              //TODO: Introbody()
+              child: Text("will be bacck"))
         ],
       ),
     );
