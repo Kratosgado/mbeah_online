@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:mbeah_online/constants.dart';
+import 'package:mbeah_online/views/home/home.dart';
 import 'package:mbeah_online/views/intro/components/animated_texts.dart';
 import 'package:mbeah_online/views/splash/loading_text.dart';
 
@@ -18,7 +19,7 @@ class _SplashViewState extends State<SplashView> {
     super.initState();
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const Text("new page")));
+          context, MaterialPageRoute(builder: (context) =>  const HomePage()));
     });
   }
 
