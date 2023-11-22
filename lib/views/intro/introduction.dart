@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mbeah_online/view_models/responsive.dart';
+import 'package:mbeah_online/views/intro/components/intro_body.dart';
 import 'package:mbeah_online/views/intro/components/side_menu_button.dart';
 import 'package:mbeah_online/views/intro/components/social_media_list.dart';
 
@@ -22,12 +23,12 @@ class Introduction extends StatelessWidget {
             width: MediaQuery.sizeOf(context).width * 0.02,
           ),
           if (!Responsive.isLargeMobile(context)) const SocialMediaIconList(),
-            SizedBox(
-              width: MediaQuery.sizeOf(context).width * 0.07,
-            ),
+          SizedBox(
+            width: MediaQuery.sizeOf(context).width * 0.07,
+          ),
           const Expanded(
-              //TODO: Introbody()
-              child: Text("will be bacck"))
+            child: IntroBody(),
+          ),
         ],
       ),
     );
