@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:mbeah_online/constants.dart';
+import 'package:mbeah_online/views/intro/components/animated_texts.dart';
 import 'package:mbeah_online/views/splash/loading_text.dart';
 
 class SplashView extends StatefulWidget {
@@ -15,10 +16,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    Timer(
-        const Duration(
-          seconds: 3,
-        ), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => const Text("new page")));
     });
@@ -33,6 +31,8 @@ class _SplashViewState extends State<SplashView> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            AnimatedImageContainer(width: 100, height: 100),
+            SizedBox(height: defaultPadding),
             LoadingText(),
           ],
         ),
