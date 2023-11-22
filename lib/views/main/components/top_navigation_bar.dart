@@ -3,6 +3,7 @@ import 'package:mbeah_online/constants.dart';
 import 'package:mbeah_online/view_models/responsive.dart';
 
 import 'connect_button.dart';
+import 'navigation_button_list.dart';
 
 class TopNavigationBar extends StatelessWidget {
   const TopNavigationBar({super.key});
@@ -22,7 +23,7 @@ class TopNavigationBar extends StatelessWidget {
           const Spacer(
             flex: 2
           ),
-          if (!Responsive.isLargeMobile(context)) // TODO: NavigationButtonList()
+          if (!Responsive.isLargeMobile(context)) const NavigationButtonList(),
             const Spacer(
               flex: 2
             ),
