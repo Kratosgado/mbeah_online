@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:mbeah_online/constants.dart';
 import 'package:mbeah_online/view_models/controller.dart';
 import 'package:mbeah_online/view_models/responsive.dart';
+import 'package:mbeah_online/views/main/components/navigation_button_list.dart';
 
 import 'components/top_navigation_bar.dart';
+import 'drawer/drawer.dart';
 
 class MainView extends StatelessWidget {
   final List<Widget> pages;
@@ -14,7 +16,7 @@ class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //TODO: custom drawer
+      drawer: const CustomDrawer(),
       body: Center(
         child: Column(
           children: [
@@ -33,6 +35,7 @@ class MainView extends StatelessWidget {
               const Row(
                 children: [
                   Spacer(),
+                  NavigationButtonList(),
                   Spacer(),
                 ],
               ),
