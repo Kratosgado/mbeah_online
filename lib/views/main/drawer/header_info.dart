@@ -11,7 +11,7 @@ class HeaderInfo extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: defaultPadding / 2),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             title,

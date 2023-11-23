@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../certifications/certifications.dart';
 import '../intro/introduction.dart';
 import '../main/main_view.dart';
 
@@ -8,10 +9,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MainView(pages: [
-      Introduction(),
+    return MainView(pages: [
+      const Introduction(),
       // ProjectView(),
-      // Certifications(),
+      Certifications(),
     ]);
   }
 }
