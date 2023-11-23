@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mbeah_online/constants.dart';
+import 'package:mbeah_online/views/main/drawer/contact_icons.dart';
+import 'package:mbeah_online/views/main/drawer/knowledge.dart';
+import 'package:mbeah_online/views/main/drawer/my_skills.dart';
+import 'package:mbeah_online/views/main/drawer/personal_info.dart';
 
 import 'about.dart';
 
@@ -20,12 +24,12 @@ class CustomDrawer extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  //TODO: PersonalInto
-                  //TODO: MYSKILLS
-                  //TODO: KNOWLEDGES
+                  PersonalInfo(),
+                  MySkills(),
+                  Knowledges(),
                   Divider(),
                   SizedBox(height: defaultPadding ,),
-                  //TODO: CONTANCT ICON
+                  ContactIcons()
                 ],
               ),),
             )
