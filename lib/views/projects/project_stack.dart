@@ -18,7 +18,7 @@ class ProjectStack extends StatelessWidget {
         controller.onHover(index, value);
       },
       onTap: () {
-        ImageViewer(context,projectList[index].image);
+        projectList[index].image != null ? ImageViewer(context,projectList[index].image!): Get.dialog(const Text("No Image for this project"));
       },
       borderRadius: BorderRadius.circular(30),
       child: AnimatedContainer(
