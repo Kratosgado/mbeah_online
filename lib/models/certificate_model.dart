@@ -18,6 +18,14 @@ class CertificateModel {
 
 List<CertificateModel> certificateList = [
   CertificateModel(
+      name: "Using Python to Interact with the Operating System",
+      organization: "Coursera",
+      date: "Dec 2023",
+      skills: "",
+      imageUrl:
+          "https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~S8XAJVBEJ8LY/CERTIFICATE_LANDING_PAGE~S8XAJVBEJ8LY.jpeg",
+      credential: "https://www.coursera.org/account/accomplishments/certificate/S8XAJVBEJ8LY"),
+  CertificateModel(
     name: 'Crash Course on Python',
     imageUrl:
         'https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~X43PFHMTRGLQ/CERTIFICATE_LANDING_PAGE~X43PFHMTRGLQ.jpeg',

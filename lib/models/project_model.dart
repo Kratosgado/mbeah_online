@@ -14,6 +14,11 @@ List<Project> projectList = [
     link: 'https://github.com/Kratosgado/nasm-compiler-linux',
   ),
   Project(
+      name: 'Chat Backend App',
+      description:
+          "This is a backend app for a chat application built with NestJs, Prisma and PostgreSQL. It allows users  connect with other users, create accounts, create chats and send messages and pictures which is converted into Base64 string and stored in the database.",
+      link: 'https://github.com/Kratosgado/backend-chat-app'),
+  Project(
     name: 'Flutter Demo Chat App',
     description:
         " The app is built using Flutter for the frontend and integrates with Firebase for backend services, including authentication, real-time database, and storage. ",
@@ -45,9 +50,5 @@ List<Project> projectList = [
       description:
           "A color theme that combines Github dark default theme, Andromeda theme and vscode dark editor color scheme. It is a very beautiful theme that is easy on the eyes.",
       link: 'https://github.com/Kratosgado/kg-dark-theme'),
-  Project(
-      name: 'Chat Backend App',
-      description:
-          "This is a backend app for a chat application built with NestJs, Prisma and PostgreSQL. It allows users  connect with other users, create accounts, create chats and send messages and pictures which is converted into Base64 string and stored in the database.",
-      link: 'https://github.com/Kratosgado/backend-chat-app'),
+  
 ];
