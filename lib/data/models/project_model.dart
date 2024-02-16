@@ -36,6 +36,11 @@ List<Project> projectList = [
           'Flutter Catalog is a my practice project that expolores flutters diverse packages, very handy catalog of beautifully designed widgets to help ease your Flutter journey. The app showcases all the available Flutter widgets including external packages',
       link: 'https://github.com/Kratosgado/flutter_catalog'),
   Project(
+      name: "C++ Text Editor",
+      description:
+          "A custom text editor created with c++ from scratch with selection and movement of lines features and more",
+      link: "https://github.com/Kratosgado/text-editor-cpp"),
+  Project(
       name: 'Instagram Clone',
       description:
           "This is a clone of the Instagram app, built with Typescript and React Navive. It is a fully functioning and feature-rich application that allows users to create their own accounts, share posts, and connect with other users.",
@@ -50,5 +55,4 @@ List<Project> projectList = [
       description:
           "A color theme that combines Github dark default theme, Andromeda theme and vscode dark editor color scheme. It is a very beautiful theme that is easy on the eyes.",
       link: 'https://github.com/Kratosgado/kg-dark-theme'),
-  
 ];
