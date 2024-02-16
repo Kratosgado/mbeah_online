@@ -5,8 +5,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../resources/constants.dart';
 
 
-class Knowledges extends StatelessWidget {
-  const Knowledges({super.key});
+class Knowledge extends StatelessWidget {
+  const Knowledge({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,15 +16,17 @@ class Knowledges extends StatelessWidget {
         Divider(),
         Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
-          child: Text('Knowledge',style: TextStyle(color: Colors.white),),
+          child: Text('Knowledge + Relevant courses',style: TextStyle(color: Colors.white),),
         ),
+        KnowledgeText(knowledge: "modern C++"),
+        KnowledgeText(knowledge: "Backend Development"),
+        KnowledgeText(knowledge: "Database management"),
         KnowledgeText(knowledge: 'Flutter, Dart'),
-        KnowledgeText(knowledge: 'Networking, Cyber Security'),
+        KnowledgeText(knowledge: 'Machine Learning/ AI'),
         KnowledgeText(knowledge: 'Git, Github'),
       ],
     );
   }
-
 }
 
 class KnowledgeText extends StatelessWidget {
@@ -37,7 +39,7 @@ class KnowledgeText extends StatelessWidget {
       child: Row(
         children: [
           SvgPicture.asset('icons/check.svg'),
-          SizedBox(width: defaultPadding/2,),
+          const SizedBox(width: defaultPadding/2,),
           Text(knowledge),
         ],
       ),

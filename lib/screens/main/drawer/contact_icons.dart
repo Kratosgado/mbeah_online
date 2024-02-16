@@ -8,13 +8,21 @@ class ContactIcons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(  
+    return Container(
       margin: const EdgeInsets.only(top: defaultPadding),
-      child: Row(  
+      child: Row(
         children: [
           const Spacer(),
-          IconButton(onPressed: () {launchUrl(Uri.parse('https://www.linkedin.com/in/prince-mbeah-essilfie-6bb0b5231'));}, icon: SvgPicture.asset('icons/linkedin.svg')),
-          IconButton(onPressed: () {launchUrl(Uri.parse('https://github.com/Kratosgado'));}, icon: SvgPicture.asset('icons/github.svg')),
+          IconButton(
+              onPressed: () {
+                launchUrl(Uri.parse('https://www.linkedin.com/in/prince-mbeah-essilfie-6bb0b5231'));
+              },
+              icon: SvgPicture.asset('icons/linkedin.svg')),
+          IconButton(
+              onPressed: () {
+                launchUrl(Uri.parse('https://github.com/Kratosgado'));
+              },
+              icon: SvgPicture.asset('icons/github.svg')),
           const Spacer(),
         ],
       ),

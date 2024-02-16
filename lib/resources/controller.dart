@@ -1,3 +1,3 @@
 import 'package:flutter/material.dart';
 
-final controller = PageController();
+final pageController = PageController();

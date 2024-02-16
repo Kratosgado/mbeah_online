@@ -44,7 +44,7 @@ class MainView extends StatelessWidget {
               child: PageView(
                 scrollDirection: Axis.vertical,
                 physics: const NeverScrollableScrollPhysics(),
-                controller: controller,
+                controller: pageController,
                 children: [...pages],
               ),
             )

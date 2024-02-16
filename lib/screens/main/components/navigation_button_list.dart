@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/screens/main/components/navigation_button.dart';
 import 'package:mbeah_online/resources/controller.dart';
+import 'package:mbeah_online/screens/main/components/navigation_button.dart';
 import 'package:mbeah_online/resources/responsive.dart';
 
 class NavigationButtonList extends StatelessWidget {
@@ -15,7 +15,7 @@ class NavigationButtonList extends StatelessWidget {
         scale: value,
         child: Row(children: [
           NavigationButton(
-            onTap: () => controller.animateToPage(0,
+            onTap: () => pageController.animateToPage(0,
                 duration: const Duration(milliseconds: 500), curve: Curves.easeIn),
             text: 'Home',
           ),
@@ -26,17 +26,17 @@ class NavigationButtonList extends StatelessWidget {
             ),
           NavigationButton(
               onTap: () {
-                controller.animateToPage(1,
+                pageController.animateToPage(1,
                     duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
               },
               text: 'Projects'),
           NavigationButton(
               onTap: () {
-                controller.animateToPage(2,
+                pageController.animateToPage(2,
                     duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
               },
               text: 'Certifications'),
-          NavigationButton(onTap: () {}, text: 'Achievements'),
+          // NavigationButton(onTap: () {}, text: 'Achievements'),
         ]),
       ),
     );

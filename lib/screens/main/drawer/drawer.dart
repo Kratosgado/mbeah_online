@@ -26,7 +26,7 @@ class CustomDrawer extends StatelessWidget {
                 children: [
                   PersonalInfo(),
                   MySkills(),
-                  Knowledges(),
+                  Knowledge(),
                   Divider(),
                   SizedBox(height: defaultPadding ,),
                   ContactIcons()
