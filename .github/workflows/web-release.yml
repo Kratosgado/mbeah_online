@@ -1,4 +1,4 @@
-name: Build and Deploy Flutter Web
+name: Build and Deploy Flutter Web App
 
 on:
   push:
@@ -7,21 +7,37 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Cache Flutter SDK
+        uses: actions/cache@v2
+        with:
+          path: C:\flutter\.pub-cache
+          key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-flutter-
+
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: stable
+          flutter-version: "2.x"
 
       - name: Install Dependencies
         run: flutter pub get
 
-      - name: Build Web
+      - name: Cache Dependency Packages
+        uses: actions/cache@v2
+        with:
+          path: C:\flutter\.pub-cache
+          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-
+
+      - name: Build Web App
         run: flutter build web
 
       - name: Deploy to Kratosgado.github.io
@@ -31,5 +47,5 @@ jobs:
           publish_dir: ./build/web
           publish_branch: gh-pages
           cname: kratosgado.github.io
-          user_name: Prince Mbeah Essilfie
+          user_name: Kratosgado
           user_email: mbeahessilfieprince@gmail.com
