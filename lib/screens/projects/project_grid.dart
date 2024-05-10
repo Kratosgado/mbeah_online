@@ -9,7 +9,7 @@ class ProjectGrid extends StatelessWidget {
   final int crossAxisCount;
   final double ratio;
   ProjectGrid({super.key, this.crossAxisCount = 3, this.ratio = 1.3});
-  final controller = Get.put(ProjectController());
+  final projectController = Get.put(ProjectController());
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -32,12 +32,12 @@ class ProjectGrid extends StatelessWidget {
                   BoxShadow(
                     color: Colors.pink,
                     offset: const Offset(-2, 0),
-                    blurRadius: controller.hovers[index] ? 20 : 10,
+                    blurRadius: projectController.hovers[index] ? 20 : 10,
                   ),
                   BoxShadow(
                     color: Colors.blue,
                     offset: const Offset(2, 0),
-                    blurRadius: controller.hovers[index] ? 20 : 10,
+                    blurRadius: projectController.hovers[index] ? 20 : 10,
                   ),
                 ]),
             child: ProjectStack(index: index)));

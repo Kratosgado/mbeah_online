@@ -54,7 +54,7 @@ class Skill extends StatelessWidget {
                   style: const TextStyle(color: Colors.white),
                 ),
                 const Spacer(),
-                Text('${(value * 100).toInt()}%'),
+                // Text('${(value * 100).toInt()}%'),
               ],
             ),
             const SizedBox(

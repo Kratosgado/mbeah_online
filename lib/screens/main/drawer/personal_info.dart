@@ -15,8 +15,7 @@ class PersonalInfo extends StatelessWidget {
         ),
         HeaderInfo(title: 'Contact', text: '+233599239271'),
         HeaderInfo(title: 'Email', text: 'mbeahessilfieprince@gmail.com'),
-        HeaderInfo(
-            title: 'Linkedin', text: 'https://www.linkedin.com/in/prince-mbeah-essilfie-6bb0b5231'),
+        HeaderInfo(title: 'Linkedin', text: '@kratosgado'),
         HeaderInfo(title: 'Github', text: '@Kratosgado'),
         SizedBox(
           height: defaultPadding,
