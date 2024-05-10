@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mbeah_online/screens/projects/project.list.dart';
 
 import '../../resources/constants.dart';
-import '../../data/models/project_model.dart';
 import '../../resources/getx_controllers/projects_controller.dart';
 import '../../resources/image_viewer.dart';
 import 'project_details.dart';

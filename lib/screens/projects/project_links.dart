@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mbeah_online/screens/projects/project.list.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../data/models/project_model.dart';
 
 class ProjectLinks extends StatelessWidget {
   final int index;

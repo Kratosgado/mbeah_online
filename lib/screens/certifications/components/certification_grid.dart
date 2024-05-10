@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mbeah_online/resources/constants.dart';
-import 'package:mbeah_online/data/models/certificate_model.dart';
+import 'package:mbeah_online/screens/certifications/certification.list.dart';
 import 'package:mbeah_online/screens/certifications/components/certificate_details.dart';
 import 'package:mbeah_online/resources/getx_controllers/certification_controller.dart';
 
