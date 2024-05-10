@@ -1,7 +1,16 @@
-
 import 'package:mbeah_online/data/models/project_model.dart';
 
 List<Project> projectList = [
+  Project(
+      name: "Pseudo Code Interpreter",
+      description:
+          "A pseudo code interpreter written in rust that interprets pseudocode file passed to it as cli argument. Handles basic operations like variable declaration, assignment, arithmetic operations, conditional statements, loops, functions, and more.",
+      link: "https://github.com/Kratosgado/pseudo_interpreter"),
+  Project(
+      name: "Pseudo Runner",
+      description:
+          "A vscode extension that runs pseudo code files in the editor. It is built with Typescript and uses the vscode extension API to interact with the editor. It builds on the pseudo code interpreter project.",
+      link: "https://github.com/Kratosgado/pseudo-runner"),
   Project(
     name: 'Nasm Compiler for Linux',
     description:
